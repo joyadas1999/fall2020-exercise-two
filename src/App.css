@@ -1,6 +1,7 @@
 .Header {
   align-items: center;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1080px;
@@ -22,7 +23,7 @@
 .Home {
   margin: 0 auto;
   max-width: 1080px;
-  padding: 0 25px;
+  padding: 0 25px 60px;
 }
 
 .Home h2 {
@@ -38,6 +39,7 @@
 
 .WeatherInfo {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -85,4 +87,26 @@
   letter-spacing: 2px;
   margin: 0;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 640px) {
+  .Header {
+    flex-direction: column;
+  }
+
+  .Header nav {
+  }
+
+  .Header nav a {
+    font-size: 14px;
+  }
+
+  .WeatherInfo {
+    flex-direction: column;
+  }
+  .WeatherInfo_Extra {
+    border: 2px solid black;
+    border-top: none;
+    flex-direction: column;
+  }
 }
