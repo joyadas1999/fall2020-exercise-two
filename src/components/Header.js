@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <header className="Header">
@@ -8,10 +10,10 @@ function Header() {
       </div>
 
       <nav>
-        <a href="#">Seoul</a>
-        <a href="#">Chicago</a>
-        <a href="#">Toronto</a>
-        <a href="#">Shanghai</a>
+        <a href="/?city=Seoul">Seoul</a>
+        <a href="/?city=Chicago">Chicago</a>
+        <a href="/?city=Toronto">Toronto</a>
+        <a href="/?city=Shanghai">Shanghai</a>
       </nav>
     </header>
   );

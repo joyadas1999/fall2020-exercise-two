@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import Header from "../components/Header";
 
 const weatherKey = `3206233bce5e109446709fd59f166d4f`;
 function Home() {
+  const history = useHistory();
+  console.log("history", history);
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState("Tokyo");
   useEffect(() => {
@@ -19,7 +22,16 @@ function Home() {
         // handle error
         console.log(error);
       });
-  }, []);
+  }, [city]);
+
+  useEffect(() => {
+    const searchParams = history.location.search;
+    const urlParams = new URLSearchParams(searchParams);
+    const city = urlParams.get("city");
+    if (city) {
+      setCity(city);
+    }
+  }, [history]);
 
   const {
     cloudiness,
